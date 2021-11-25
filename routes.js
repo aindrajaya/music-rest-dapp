@@ -53,6 +53,19 @@ function routes(app, db){
   })
   
   //Upload Endpoint
+  app.post('/upload', (req, res) => {
+    let buffer = req.body.buffer
+    let name = req.body.name
+    let title = req.body.title
+    if(buffer && title){
+      //do something
+    } else {
+      res.status(400).json({
+        "status": "Failed",
+        "reason": "wrong input"
+      })
+    }
+  })
 
   //Access endpoint, for specific music id
 
