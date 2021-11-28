@@ -8,4 +8,11 @@ contract Stored {
  //Events
  event ipfsSent(string _ipfsHash, string _address);
  event storedResponse(string response);
+  
+ //Modifiers
+ modifier notFull(string memory _string){
+   bytes memory stringTest = bytes(_string);
+   require(stringTest.length == 0);
+   _;
+ }
 }
