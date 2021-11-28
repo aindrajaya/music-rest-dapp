@@ -25,4 +25,11 @@ contract Stored {
    ipfsStored[_address] = _ipfsHash;
    emit ipfsSent(_ipfsHash, _address);
  }
+
+ //Function 2 - Retrieve/Get the Hash
+ function getHash(string memory _address) public view returns(string memory){
+   string memory ipfs_hash=ipfsStored[_address];
+   //emit storedResponse(ipfs_hash);
+   return ipfs_hash;
+ }
 }
