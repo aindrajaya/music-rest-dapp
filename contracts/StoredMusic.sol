@@ -15,4 +15,7 @@ contract Stored {
    require(stringTest.length == 0);
    _;
  }
+
+ //An emty Constructor
+ constructor() {}
 }
