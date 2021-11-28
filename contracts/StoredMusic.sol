@@ -18,4 +18,11 @@ contract Stored {
 
  //An emty Constructor
  constructor() {}
+
+ //Function 1 - sendIPFS
+ function sendIPFS(string memory _address, string memory _ipfsHash) 
+ notFull(ipfsStored[_address]) public {
+   ipfsStored[_address] = _ipfsHash;
+   emit ipfsSent(_ipfsHash, _address);
+ }
 }
