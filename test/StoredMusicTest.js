@@ -11,6 +11,11 @@ contract("IPFSStored test", accounts => {
     await ipfsStored.ipfsSent((err, res) => {
       eventEmitted=true
     })
+
     //3. Call the contract function which sends ipfs address
+    await ipfsStored.sendIPFS(accounts[1], "sampleAddress", {
+      from: accounts[0]
+    })
+    assert.equal(eventEmitted, true, "sending an IPFS request does not emit an event")
   })
 })
