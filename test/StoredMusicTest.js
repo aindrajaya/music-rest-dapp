@@ -7,6 +7,10 @@ contract("IPFSStored test", accounts => {
     const ipfsStored = await IPFSStored.deployed()
 
     //2. Set the variable to false and get event listener
+    eventEmitted = false
+    await ipfsStored.ipfsSent((err, res) => {
+      eventEmitted=true
+    })
     //3. Call the contract function which sends ipfs address
   })
 })
