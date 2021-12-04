@@ -23,6 +23,7 @@ if(typeof web3 !== 'undefined'){
 
 //save the contracts interface with named LMS variable
 const LMS = contract(artifacts)
+LMS.setProvider(web3.currentProvider)
 
 
 //database connection
