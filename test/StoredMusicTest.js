@@ -1,4 +1,4 @@
-const IPFSStored = artifacts("./contracts/StoredMusic.sol")
+const IPFSStored = artifacts.require("Stored.sol")
 
 contract("IPFSStored test", accounts => {
   //declatre the test
