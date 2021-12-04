@@ -34,6 +34,7 @@ mongodb.connect(process.env.DB, {
   //Connect to the contract interfaces
   const accounts = await web3.eth.getAccounts();
   const lms = await LMS.deployed();
+  //const lms = LMS.at(contract_address)
 
   //home dir
   routes(app, db)
