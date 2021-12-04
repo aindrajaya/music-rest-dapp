@@ -21,6 +21,10 @@ if(typeof web3 !== 'undefined'){
   var web3 = new Web3(new Web3.providers.HttpProvider('https://localhost:8545'))
 }
 
+//save the contracts interface with named LMS variable
+const LMS = contract(artifacts)
+
+
 //database connection
 mongodb.connect(process.env.DB, {
   useUnifiedTopology: true
