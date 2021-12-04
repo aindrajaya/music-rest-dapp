@@ -34,7 +34,7 @@ mongodb.connect(process.env.DB, {
   //Connect to the contract interfaces
   const accounts = await web3.eth.getAccounts();
   const lms = await LMS.deployed();
-  //const lms = LMS.at(contract_address)
+  //const lms = LMS.at(contract_address) //used for the remote nodes such as rinkeby or ropsten
 
   //home dir
   routes(app, db)
