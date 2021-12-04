@@ -28,12 +28,12 @@ LMS.setProvider(web3.currentProvider)
 //database connection
 mongodb.connect(process.env.DB, {
   useUnifiedTopology: true
-},  (err, client) => {
+}, async (err, client) => {
   const db = client.db('jayakatwang')
   
   //Connect to the contract interfaces
-  const accounts = web3.eth.getAccounts();
-  const lms = LMS.deployed();
+  const accounts = await web3.eth.getAccounts();
+  const lms = await LMS.deployed();
 
   //home dir
   routes(app, db)
