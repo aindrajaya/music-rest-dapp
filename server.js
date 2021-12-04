@@ -25,12 +25,16 @@ if(typeof web3 !== 'undefined'){
 const LMS = contract(artifacts)
 LMS.setProvider(web3.currentProvider)
 
-
 //database connection
 mongodb.connect(process.env.DB, {
   useUnifiedTopology: true
-}, (err, client) => {
+},  (err, client) => {
   const db = client.db('jayakatwang')
+  
+  //Connect to the contract interfaces
+  const accounts = web3.eth.getAccounts();
+  const lms = LMS.deployed();
+
   //home dir
   routes(app, db)
   app.listen(process.env.PORT || 8082, () => {
