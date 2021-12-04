@@ -55,7 +55,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -92,7 +93,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_ipfsHash\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_address\",\"type\":\"string\"}],\"name\":\"ipfsSent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"response\",\"type\":\"string\"}],\"name\":\"storedResponse\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_address\",\"type\":\"string\"}],\"name\":\"getHash\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"ipfsStored\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_address\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_ipfsHash\",\"type\":\"string\"}],\"name\":\"sendIPFS\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/devapps/portfolio/music-rest-dapp/contracts/StoredMusic.sol\":\"Stored\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/devapps/portfolio/music-rest-dapp/contracts/StoredMusic.sol\":{\"keccak256\":\"0xcd8db8dc86bb97d53b4c55c8f08927251f2417da6d003a9d6ea2e70a3bb0c351\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec060a55b7dc4db1facaf4e6e6653883c9bd909ea0e2242363aa1968b656e8b6\",\"dweb:/ipfs/QmcAqnnkNtbLRWxCEDgsggHPrRortAe7QSoNcn7yCfWvGQ\"]}},\"version\":1}",
@@ -5599,9 +5601,50 @@
     "name": "solc",
     "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "1639380241764": {
+      "events": {
+        "0xe20751acac1c1604f322f90c67a302e99b44a472645e625269c08832cded2340": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "_ipfsHash",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "_address",
+              "type": "string"
+            }
+          ],
+          "name": "ipfsSent",
+          "type": "event"
+        },
+        "0x82e81bdaacf4754f4ce61e1d373f4273b123d707bb936beab126b6da7d41a36c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "response",
+              "type": "string"
+            }
+          ],
+          "name": "storedResponse",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x2ff95267CAaF8699f65d5F959567c1911BB94bDC",
+      "transactionHash": "0xc38e0e6f4391a6bbd5f47af993e35fa5b60cbd746b69b6812db43e71e08f2fac"
+    }
+  },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-12-13T07:49:10.011Z",
+  "updatedAt": "2021-12-13T09:48:21.610Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
