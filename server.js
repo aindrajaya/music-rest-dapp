@@ -14,6 +14,13 @@ const artifacts = require('./build/Stored.json')
  */
 app.use(express.json())
 
+//Make sure to check the web3 interface ready
+if(typeof web3 !== 'undefined'){
+  var web3 = new Web3(web3.currentProvider)
+} else {
+  var web3 = new Web3(new Web3.providers.HttpProvider('https://localhost:8545'))
+}
+
 //database connection
 mongodb.connect(process.env.DB, {
   useUnifiedTopology: true
