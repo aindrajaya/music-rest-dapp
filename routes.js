@@ -1,6 +1,13 @@
 const shortid = require('shortid')
 const IPFS = require('ipfs-api') //call the ipfs api function
 
+//Configure the ipfs instance
+const ipfs = IPFS({
+  host: 'ipfs.infura.io',
+  port: 5001,
+  protocol: 'https'
+});
+
 function routes(app, db){
   //Register Endpoint
   app.post('/register', (req, res) => {
