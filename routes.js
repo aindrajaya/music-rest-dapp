@@ -67,13 +67,23 @@ function routes(app, dbe, lms, accounts){
   })
   
   //Upload Endpoint
-  app.post('/upload', async (req, res) => {
+  app.post('/upload', (req, res) => {
     let buffer = req.body.buffer
     let name = req.body.name
     let title = req.body.title
     let id = shortid.generate() + shortid.generate() //add the id generator
     if(buffer && title){
-      //do something
+      //the integration process with web3
+      let ipfsHash = ipfs.add(buffer)
+      let hash = ipfsHash[0].hash
+      lms.sendIPFS(id, hash, {
+        from: accounts[0]
+      }).then((_hash, _address) => {
+        //Process to insert music with has to the ipfs store data
+        
+      })
+      //Error handling when uploading
+      
     } else {
       res.status(400).json({
         "status": "Failed",
