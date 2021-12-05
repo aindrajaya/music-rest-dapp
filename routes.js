@@ -8,7 +8,8 @@ const ipfs = IPFS({
   protocol: 'https'
 });
 
-function routes(app, db){
+//Adding the contract intances and ipfs nodes
+function routes(app, db, lms, accounts){
   //Register Endpoint
   app.post('/register', (req, res) => {
     let email = req.body.email
