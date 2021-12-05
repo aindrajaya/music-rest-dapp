@@ -9,7 +9,11 @@ const ipfs = IPFS({
 });
 
 //Adding the contract intances and ipfs nodes
-function routes(app, db, lms, accounts){
+function routes(app, dbe, lms, accounts){
+  //configure the database collection
+  let db = dbe.collection('music-users') //for storing the music
+
+
   //Register Endpoint
   app.post('/register', (req, res) => {
     let email = req.body.email
