@@ -93,7 +93,12 @@ function routes(app, dbe, lms, accounts){
         })
       })
       //Error handling when uploading
-      
+      .catch(err => {
+        res.status(500).json({
+          "status": "Failed",
+          "reason": "Upload error occured"
+        })
+      })
     } else {
       res.status(400).json({
         "status": "Failed",
