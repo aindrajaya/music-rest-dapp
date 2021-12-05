@@ -1,4 +1,6 @@
 const shortid = require('shortid')
+const IPFS = require('ipfs-api') //call the ipfs api function
+
 function routes(app, db){
   //Register Endpoint
   app.post('/register', (req, res) => {
