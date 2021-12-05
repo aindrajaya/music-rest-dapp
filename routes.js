@@ -67,10 +67,11 @@ function routes(app, dbe, lms, accounts){
   })
   
   //Upload Endpoint
-  app.post('/upload', (req, res) => {
+  app.post('/upload', async (req, res) => {
     let buffer = req.body.buffer
     let name = req.body.name
     let title = req.body.title
+    let id = shortid.generate() + shortid.generate() //add the id generator
     if(buffer && title){
       //do something
     } else {
