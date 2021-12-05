@@ -67,15 +67,16 @@ function routes(app, dbe, lms, accounts){
   })
   
   //Upload Endpoint
-  app.post('/upload', (req, res) => {
+  app.post('/upload', async (req, res) => {
     let buffer = req.body.buffer
     let name = req.body.name
     let title = req.body.title
     let id = shortid.generate() + shortid.generate() //add the id generator
     if(buffer && title){
       //the integration process with web3
-      let ipfsHash = ipfs.add(buffer)
+      let ipfsHash = await ipfs.add(buffer)
       let hash = ipfsHash[0].hash
+      //calling the sendIPFS method
       lms.sendIPFS(id, hash, {
         from: accounts[0]
       }).then((_hash, _address) => {
