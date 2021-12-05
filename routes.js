@@ -81,7 +81,16 @@ function routes(app, dbe, lms, accounts){
         from: accounts[0]
       }).then((_hash, _address) => {
         //Process to insert music with has to the ipfs store data
-        
+        music.insertOne({
+          id, 
+          hash, 
+          title, 
+          name
+        })
+        res.json({
+          "status": "success",
+          id
+        })
       })
       //Error handling when uploading
       
