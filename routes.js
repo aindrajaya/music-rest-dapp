@@ -107,6 +107,11 @@ function routes(app, dbe, lms, accounts){
     }
   })
 
+  //Accese endpoint, for specific email
+  app.get('/access/:email', (req,res) => {
+    //do something
+  })
+
   //Access endpoint, for specific music id
   app.get('/access/email/:id', (req,res) => {
     if(req.params.id && req.params.email){
