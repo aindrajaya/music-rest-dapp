@@ -112,7 +112,18 @@ function routes(app, dbe, lms, accounts){
     //Process, add some logic and conditional
     if(req.params.email){
       //Find the same email
-     
+      db.findOne({
+        email: req.body.email
+      }, (err,doc) => {
+        //Make conditionals that find and get the music
+        if(doc){
+          let data = music.find().toArray()
+          res.json({
+            "status": "success", 
+            data
+          })
+        }
+      })
     } else {
       //When error occured
     
