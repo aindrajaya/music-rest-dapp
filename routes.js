@@ -107,11 +107,15 @@ function routes(app, dbe, lms, accounts){
     }
   })
 
-  //Accese endpoint, for specific email
+  //Access endpoint, for specific email
   app.get('/access/:email', (req,res) => {
     //Process, add some logic and conditional
     if(req.params.email){
-      //Code here
+      //Find the same email
+     
+    } else {
+      //When error occured
+    
     }
   })
 
