@@ -126,7 +126,10 @@ function routes(app, dbe, lms, accounts){
       })
     } else {
       //When error occured
-    
+      res.status(400).json({
+        "status": "Failed",
+        "reason": "wrong input"
+      })
     }
   })
 
