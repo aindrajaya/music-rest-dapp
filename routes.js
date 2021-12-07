@@ -143,7 +143,17 @@ function routes(app, dbe, lms, accounts){
       }, (err, doc) => {
         // Conditional to getHash by id
         if(doc){
-          lms.getHash(id, {from: accounts[0]})
+          lms.getHash(id, {from: accounts[0]}) //called the getHash function from contract instance
+          .then((hash) => {
+            let data =  ipfs.files.get(hash)
+            res.json({
+              "status": "success",
+              data: data.content
+            })
+          })
+        } else {
+          //Error handling
+          
         }
       })
     } else {
