@@ -144,8 +144,8 @@ function routes(app, dbe, lms, accounts){
         // Conditional to getHash by id
         if(doc){
           lms.getHash(id, {from: accounts[0]}) //called the getHash function from contract instance
-          .then((hash) => {
-            let data =  ipfs.files.get(hash)
+          .then(async(hash) => {
+            let data = await ipfs.files.get(hash)
             res.json({
               "status": "success",
               data: data.content
