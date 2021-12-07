@@ -135,6 +135,7 @@ function routes(app, dbe, lms, accounts){
 
   //Access endpoint, for specific music id
   app.get('/access/email/:id', (req,res) => {
+    let id = req.params.id //declare the id
     if(req.params.id && req.params.email){
       //do something
     } else {
@@ -144,8 +145,6 @@ function routes(app, dbe, lms, accounts){
       })
     }
   })
-
-  //Access endpoint, for entire library
 }
 
 module.exports = routes
