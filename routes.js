@@ -137,7 +137,12 @@ function routes(app, dbe, lms, accounts){
   app.get('/access/email/:id', (req,res) => {
     let id = req.params.id //declare the id
     if(req.params.id && req.params.email){
-      //do something
+      //Find from the database
+      db.findOne({
+        email: req.body.email
+      }, (err, doc) => {
+        // Conditional to getHas by id
+      })
     } else {
       res.status(400).json({
         "status": "Failed",
