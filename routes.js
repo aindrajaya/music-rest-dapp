@@ -141,7 +141,10 @@ function routes(app, dbe, lms, accounts){
       db.findOne({
         email: req.body.email
       }, (err, doc) => {
-        // Conditional to getHas by id
+        // Conditional to getHash by id
+        if(doc){
+          lms.getHash(id, {from: accounts[0]})
+        }
       })
     } else {
       res.status(400).json({
