@@ -153,7 +153,10 @@ function routes(app, dbe, lms, accounts){
           })
         } else {
           //Error handling
-          
+          res.satus(400).json({
+            "status": "Failed",
+            "reason": "wrong input"
+          })
         }
       })
     } else {
