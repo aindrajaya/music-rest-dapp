@@ -68,6 +68,16 @@ function routes(app, db){
   })
 
   //Access endpoint, for specific music id
+  app.get('/access/email/:id', (req,res) => {
+    if(req.params.id && req.params.email){
+      //do something
+    } else {
+      res.status(400).json({
+        "status": "Failed",
+        "reason": "wrong input"
+      })
+    }
+  })
 
   //Access endpoint, for entire library
 }
