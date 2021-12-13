@@ -1,4 +1,4 @@
-//For windows only
+//For Mac or Linux OS
 const path = require('path')
 
 module.exports = {
