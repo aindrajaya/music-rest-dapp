@@ -81,3 +81,5 @@ function routes(app, db){
 
   //Access endpoint, for entire library
 }
+
+module.exports = routes
